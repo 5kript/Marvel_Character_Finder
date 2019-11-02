@@ -13,3 +13,8 @@ Searches the Marvel Developer API for all characters present in the Marvel Unive
 - Added config file for environment variables
 - Added logic for all characters and 1 character
 - Added character list component
+- Added search component
+
+## Todo's
+- Add cache to safe searched items
+- Add search logic if item was allready searched for
