@@ -24,7 +24,7 @@ const CharacterList = () => {
     <div className="container">
       <div className="row">
         {heroes.map(hero => (
-          <div key={hero.id} className="col-3">
+          <div key={hero.id} className="col-3 mb-4">
             <Card>
               <CardActionArea>
                 <CardMedia

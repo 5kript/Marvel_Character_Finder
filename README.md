@@ -1,6 +1,14 @@
 # Marvel Character Finder
 Searches the Marvel Developer API for all characters present in the Marvel Universe. Users can also search for a specific character through the searchbar.
 
+Created with:
+- [Marvel Developer API](https://developer.marvel.com/)
+- [React](https://reactjs.org/)
+- [Bootstrap (layout only)](https://getbootstrap.com/)
+- [Material-ui](https://material-ui.com/)
+- [Scss](https://sass-lang.com/)
+- [Axios](https://github.com/axios/axios)
+
 ## Steps
 - Created git repo on [github.com/5kript/Marvel_Character_Finder](https://github.com/5kript/Marvel_Character_Finder)
 - Initialized git on project
