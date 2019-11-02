@@ -5,7 +5,7 @@ import { MarvelProvider } from './context/provider/marvelApiContext';
 
 import './App.scss';
 
-import CharacterList from './components/characterlist/CharacterList';
+import CharacterList from './components/character/CharacterList';
 import SearchField from './components/searchfield/SearchField';
 
 function App() {

@@ -24,5 +24,6 @@ Created with:
 - Added search component
 
 ## Todo's
+- Add detail view of character with more details about the character and links to external media
 - Add cache to safe searched items
 - Add search logic if item was allready searched for
