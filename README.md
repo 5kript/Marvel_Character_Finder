@@ -11,3 +11,4 @@ Searches the Marvel Developer API for all characters present in the Marvel Unive
 - Bootstrapped project with create-react-app
 - Installed packages: node-sass, bootstrap (grid), material-ui, axios, react-router-dom dotenv
 - Added config file for environment variables
+- Added logic for all characters and 1 character

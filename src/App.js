@@ -5,12 +5,14 @@ import { MarvelProvider } from './context/provider/marvelApiContext';
 
 import './App.scss';
 
+import CharacterList from './components/characterlist/CharacterList';
+
 function App() {
   return (
     <MarvelProvider>
       <BrowserRouter>
         <div className="App">
-          <h1>Whaat?</h1>
+          <CharacterList></CharacterList>
         </div>
       </BrowserRouter>
     </MarvelProvider>
