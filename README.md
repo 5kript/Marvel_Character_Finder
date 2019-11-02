@@ -12,3 +12,4 @@ Searches the Marvel Developer API for all characters present in the Marvel Unive
 - Installed packages: node-sass, bootstrap (grid), material-ui, axios, react-router-dom dotenv
 - Added config file for environment variables
 - Added logic for all characters and 1 character
+- Added character list component
