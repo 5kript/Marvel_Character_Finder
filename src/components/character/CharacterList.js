@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import {Link} from 'react-router-dom';
 
 import { MarvelContext } from '../../context/provider/marvelApiContext';
 
@@ -13,7 +14,7 @@ import {
 
 const CharacterList = () => {
   const profile = useContext(MarvelContext);
-
+  const { getHeroById } = profile;
   let heroes = [];
 
   if (profile.heroes !== undefined) {
@@ -41,10 +42,7 @@ const CharacterList = () => {
               </CardActionArea>
               <CardActions>
                 <Button size="small" color="primary">
-                  Share
-                </Button>
-                <Button size="small" color="primary">
-                  Learn More
+                  <Link onClick={() => getHeroById(hero.id)} to={`/detail/${hero.id}`}>View detail</Link>
                 </Button>
               </CardActions>
             </Card>

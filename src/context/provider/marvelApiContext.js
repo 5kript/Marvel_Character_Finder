@@ -6,6 +6,7 @@ export const MarvelContext = createContext();
 
 export const MarvelProvider = props => {
   const [heroes, setHeroes] = useState();
+  const [hero, setHero] = useState();
 
   useEffect(() => {
     getHeroes();
@@ -23,12 +24,20 @@ export const MarvelProvider = props => {
     });
   };
 
+  const getHeroById = id => {
+    marvelApiLogic.getHeroById(id).then(res => {
+      setHero(res.data.results);
+    });
+  };
+
   return (
     <MarvelContext.Provider
       value={{
         heroes,
         getHeroes,
-        getHeroByName
+        getHeroByName,
+        hero,
+        getHeroById
       }}
     >
       {props.children}

@@ -1,20 +1,21 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { MarvelProvider } from './context/provider/marvelApiContext';
 
 import './App.scss';
-
-import CharacterList from './components/character/CharacterList';
-import SearchField from './components/searchfield/SearchField';
+import Landing from "./components/pages/Landing";
+import CharacterDetail from "./components/character/CharacterDetail";
 
 function App() {
   return (
     <MarvelProvider>
       <BrowserRouter>
         <div className="App">
-          <SearchField />
-          <CharacterList />
+          <Switch>
+            <Route exact path="/" render={() => <Landing />} />
+            <Route path="/detail/:heroId" render={() => <CharacterDetail /> } />
+          </Switch>
         </div>
       </BrowserRouter>
     </MarvelProvider>

@@ -25,7 +25,20 @@ const marvelLogic = {
     } catch (err) {
       return console.log(err);
     }
-  }
+  },
+
+  async getHeroById(id) {
+    try {
+      const res = await Axios.get(
+          `${process.env.REACT_APP_BASE_URL}characters/${id}?apikey=${process.env.REACT_APP_PUBLIC_API_KEY}`
+      );
+      if (res.status === 200) {
+        return res.data;
+      }
+    } catch (err) {
+      return console.log(err);
+    }
+  },
 };
 
 export default marvelLogic;
