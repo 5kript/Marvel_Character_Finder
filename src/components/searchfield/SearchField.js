@@ -1,13 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState } from "react";
 
-import { MarvelContext } from '../../context/provider/marvelApiContext';
+import { MarvelContext } from "../../context/provider/marvelApiContext";
 
-import TextField from '@material-ui/core/TextField';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import SearchIcon from '@material-ui/icons/Search';
+import TextField from "@material-ui/core/TextField";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchIcon from "@material-ui/icons/Search";
 
 const initialState = {
-  heroname: ''
+  heroname: ""
 };
 
 const SearchField = () => {
@@ -17,7 +17,7 @@ const SearchField = () => {
   const onChange = e => {
     const { name, value } = e.target;
 
-    if (value === '') {
+    if (value === "") {
       setName(prevState => ({ ...prevState, [name]: value }));
       return profile.getHeroes();
     }

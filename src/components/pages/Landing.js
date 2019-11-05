@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import CharacterList from '../character/CharacterList';
-import SearchField from '../searchfield/SearchField';
+import CharacterList from "../character/CharacterList";
+import SearchField from "../searchfield/SearchField";
 
 function Landing(props) {
   return (
-      <>
-        <SearchField />
-        <CharacterList />
-      </>
+    <>
+      <SearchField />
+      <CharacterList />
+    </>
   );
-};
+}
 
 export default Landing;

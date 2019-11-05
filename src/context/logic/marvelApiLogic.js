@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import Axios from "axios";
 
 const marvelLogic = {
   async fetchHero() {
@@ -30,7 +30,7 @@ const marvelLogic = {
   async getHeroById(id) {
     try {
       const res = await Axios.get(
-          `${process.env.REACT_APP_BASE_URL}characters/${id}?apikey=${process.env.REACT_APP_PUBLIC_API_KEY}`
+        `${process.env.REACT_APP_BASE_URL}characters/${id}?apikey=${process.env.REACT_APP_PUBLIC_API_KEY}`
       );
       if (res.status === 200) {
         return res.data;
@@ -38,7 +38,7 @@ const marvelLogic = {
     } catch (err) {
       return console.log(err);
     }
-  },
+  }
 };
 
 export default marvelLogic;

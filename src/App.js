@@ -1,11 +1,11 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { MarvelProvider } from './context/provider/marvelApiContext';
+import { MarvelProvider } from "./context/provider/marvelApiContext";
 
-import './App.scss';
+import "./App.scss";
 import Landing from "./components/pages/Landing";
-import CharacterDetail from "./components/character/CharacterDetail";
+import CharacterDetail from "./components/character/characterdetail/CharacterDetail";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <div className="App">
           <Switch>
             <Route exact path="/" render={() => <Landing />} />
-            <Route path="/detail/:heroId" render={() => <CharacterDetail /> } />
+            <Route path="/detail/:heroId" render={() => <CharacterDetail />} />
           </Switch>
         </div>
       </BrowserRouter>

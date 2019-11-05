@@ -1,15 +1,20 @@
-import React, { useState, createContext, useEffect } from 'react';
+import React, { useState, createContext, useEffect } from "react";
 
-import marvelApiLogic from '../logic/marvelApiLogic';
+import marvelApiLogic from "../logic/marvelApiLogic";
 
 export const MarvelContext = createContext();
 
 export const MarvelProvider = props => {
-  const [heroes, setHeroes] = useState();
-  const [hero, setHero] = useState();
+  const [heroes, setHeroes] = useState([]);
+  const [hero, setHero] = useState({});
 
   useEffect(() => {
-    getHeroes();
+    marvelApiLogic.fetchHero().then(res => {
+      setHeroes(res.data.results);
+      //TODO: remove line below when detail page is ready
+      // this is just for development
+      setHero(res.data.results[0]);
+    });
   }, []);
 
   const getHeroes = () => {
@@ -26,19 +31,13 @@ export const MarvelProvider = props => {
 
   const getHeroById = id => {
     marvelApiLogic.getHeroById(id).then(res => {
-      setHero(res.data.results);
+      setHero(res.data.results[0]);
     });
   };
 
   return (
     <MarvelContext.Provider
-      value={{
-        heroes,
-        getHeroes,
-        getHeroByName,
-        hero,
-        getHeroById
-      }}
+      value={{ heroes, getHeroById, hero, getHeroByName, getHeroes }}
     >
       {props.children}
     </MarvelContext.Provider>
