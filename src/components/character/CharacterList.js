@@ -17,35 +17,33 @@ const CharacterList = () => {
   return (
     <div className="container">
       <div className="row">
-        {heroes.length > 1
-          ? heroes.map(hero => (
-              <div key={hero.id} className="col-6 col-sm-3 mb-4">
-                <Card>
-                  <CardMedia
-                    image={
-                      hero.thumbnail.path +
-                      "/portrait_xlarge." +
-                      hero.thumbnail.extension
-                    }
-                    title={hero.name}
-                  />
-                  <CardContent>
-                    <h2>{hero.name}</h2>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      <Link
-                        onClick={() => getHeroById(hero.id)}
-                        to={`/detail/${hero.id}`}
-                      >
-                        View detail
-                      </Link>
-                    </Button>
-                  </CardActions>
-                </Card>
-              </div>
-            ))
-          : null}
+        {heroes.map(hero => (
+          <div key={hero.id} className="col-6 col-sm-3 mb-4">
+            <Card>
+              <CardMedia
+                image={
+                  hero.thumbnail.path +
+                  "/portrait_xlarge." +
+                  hero.thumbnail.extension
+                }
+                title={hero.name}
+              />
+              <CardContent>
+                <h2>{hero.name}</h2>
+              </CardContent>
+              <CardActions>
+                <Button size="small" color="primary">
+                  <Link
+                    onClick={() => getHeroById(hero.id)}
+                    to={`/detail/${hero.id}`}
+                  >
+                    View detail
+                  </Link>
+                </Button>
+              </CardActions>
+            </Card>
+          </div>
+        ))}
       </div>
     </div>
   );

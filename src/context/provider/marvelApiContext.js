@@ -14,6 +14,7 @@ export const MarvelProvider = props => {
       //TODO: remove line below when detail page is ready
       // this is just for development
       setHero(res.data.results[0]);
+      // getComics();
     });
   }, []);
 
@@ -35,11 +36,26 @@ export const MarvelProvider = props => {
     });
   };
 
+  // eslint-disable-next-line no-unused-vars
+  const getComics = () => {
+    marvelApiLogic.getComics().then(res => {
+      console.log(res);
+    });
+  };
+
+  const dataRenderControl = () => {
+    if (heroes.length > 1 || Object.entries(hero).length > 1) {
+      return props.children;
+    } else {
+      return null;
+    }
+  };
+
   return (
     <MarvelContext.Provider
       value={{ heroes, getHeroById, hero, getHeroByName, getHeroes }}
     >
-      {props.children}
+      {dataRenderControl()}
     </MarvelContext.Provider>
   );
 };
