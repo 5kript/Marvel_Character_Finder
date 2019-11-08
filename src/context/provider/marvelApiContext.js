@@ -1,6 +1,7 @@
 import React, { useState, createContext, useEffect } from "react";
 
 import marvelApiLogic from "../logic/marvelApiLogic";
+import Spinner from "../../components/spinner/Spinner";
 
 export const MarvelContext = createContext();
 
@@ -47,7 +48,7 @@ export const MarvelProvider = props => {
     if (heroes.length > 1 || Object.entries(hero).length > 1) {
       return props.children;
     } else {
-      return null;
+      return <Spinner />;
     }
   };
 
