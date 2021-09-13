@@ -85,7 +85,7 @@ typings/
 # nuxt.js build output
 .nuxt
 
-# react / gatsby 
+# react / gatsby
 public/
 
 # vuepress build output
@@ -212,3 +212,4 @@ fabric.properties
 .env.test.local
 .env.production.local
 
+prev/
