@@ -212,4 +212,8 @@ fabric.properties
 .env.test.local
 .env.production.local
 
-prev/
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
